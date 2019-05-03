@@ -1,0 +1,41 @@
+/* rgba(77, 202, 203, 1) */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Sofia');
+
+body {
+  height: window.height;
+  width: window.width;
+  background: #212121;
+  overflow: hidden;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
+}
+
+#logo {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text{
+  position: absolute;
+  font-weight:100;
+  font-size:28px;
+  color: rgb(239, 225, 201);
+  /* color:#fafafa; */
+  top: 65%;
+  font-family: 'Sofia', cursive;
+}
+
+.dud{
+  color:#757575;
+}
