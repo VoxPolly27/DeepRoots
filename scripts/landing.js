@@ -58,8 +58,8 @@ class TextScramble {
 
 const phrases = [
   'Authentic',
-  'Unique',
-  'Original'
+  'Authentic Unique',
+  'Authentic Unique Original'
 ]
 
 const el = document.querySelector('.text');
@@ -77,7 +77,7 @@ next()
 
 // 2:________________________________________
 function openNav() { //opens navigation bar
-  document.getElementById("navigation").style.width = "35%";
+  document.getElementById("navigation").style.width = "20%";
 }
 
 function closeNav() { //closes nav bar

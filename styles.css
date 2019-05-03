@@ -1,19 +1,26 @@
 /* // Index
   1: Body, image, and text
   2: Navigation
+  3: Bulbs
 
 
-// 1:________________________________________ */
+
 
 /* rgba(77, 202, 203, 1) */
+/* Background = #161111 */
+/* References: */
+/* Image by Ranjith Siji from Pixabay  */
+/* <a href="https://icons8.com/icon/61246/small-business">Small Business icon by Icons8</a> */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Sofia');
 
+/* // 1:________________________________________ */
+
 body {
-  height: window.height;
-  width: window.width;
-  background: #212121;
-  background-image: url("images/bulbs.png");
+  height: 100%;
+  width: 100%;
+  background: #161111 ;
+  /* background-image: url("images/bulbs2.png"); */
   background-size: 100%;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -53,7 +60,7 @@ body {
 /* 2:________________________________________  */
 
 .navbutton {
-  top: 50%;
+  top: 45%;
   left: 20px;
   z-index: 1;
   position: fixed;
@@ -68,6 +75,7 @@ body {
 
 .sidenav {
   height: 100%;
+  top: 0;
   width: 0;
   position: fixed;
   left: 0;
@@ -75,8 +83,8 @@ body {
   opacity: 0.5;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
   align-items: center;
+  display: block;
 }
 
 .sidenav:hover {
@@ -98,7 +106,6 @@ body {
   color: rgb(239, 225, 201);
   transition: 0.2s linear;
   cursor:pointer;
-
 }
 
 .sidenav .closebtn {
@@ -112,4 +119,57 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+/* 3:________________________________________  */
+
+#bulb {
+  position: fixed;
+  background-color: white;
+  z-index: -1;
+}
+
+.bulb1 path {
+  animation: move 4s infinite;
+}
+.bulb2 path {
+  animation: move 3s infinite;
+}
+.bulb3 path {
+  animation: move 5s infinite;
+}
+#line1 {
+  animation: move 4s infinite;
+}
+
+#line2 {
+  animation: move 3s infinite;
+}
+
+#line3 {
+  animation: move 5s infinite;
+}
+
+@keyframes move {
+  0% {  transform: translateY(10px);}
+  10% { transform: translateY(12px);}
+  20% { transform: translateY(14px);}
+  30% { transform: translateY(16px);}
+  40% { transform: translateY(18px);}
+  50% { transform: translateY(20px);}
+  60% { transform: translateY(18px);}
+  70% { transform: translateY(16px);}
+  80% { transform: translateY(14px);}
+  90% { transform: translateY(12px);}
+  100% {transform: translateY(10px);}
+}
+
+@keyframes light {
+  100% {box-shadow: outset 30px 30px 30px 5px gold;
+  stroke: gold;
+ }
+}
+
+#tungsten1 {
+  animation: light 2s infinite;
 }
