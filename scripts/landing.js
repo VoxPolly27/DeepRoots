@@ -1,3 +1,8 @@
+// Index
+  // 1: JS for landing page
+  // 2: Navigation Bar Functions
+
+// 1:________________________________________
 class TextScramble {
   constructor(el){
     this.el = el;
@@ -69,3 +74,12 @@ const next = () => {
 }
 
 next()
+
+// 2:________________________________________
+function openNav() { //opens navigation bar
+  document.getElementById("navigation").style.width = "35%";
+}
+
+function closeNav() { //closes nav bar
+  document.getElementById("navigation").style.width = "0";
+}
