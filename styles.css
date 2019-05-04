@@ -5,7 +5,7 @@
 
 
 
-
+/* #00f3e0 */
 /* rgba(77, 202, 203, 1) */
 /* Background = #161111 */
 /* References: */
@@ -32,6 +32,18 @@ body {
 #canvas {
   height: 100%;
   width: 100%;
+}
+
+#nextMarket {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 3.5vw;
+  font-family: 'Sofia', cursive;
+  color: rgb(239, 225, 201);
+  /* color: #161111; */
+  font-weight:100;
+  z-index: 5;
 }
 
 #logo {
@@ -164,12 +176,86 @@ body {
   100% {transform: translateY(10px);}
 }
 
-@keyframes light {
-  100% {box-shadow: outset 30px 30px 30px 5px gold;
-  stroke: gold;
- }
+@keyframes glowa {
+    0%{stroke: rgba(77, 202, 203, 1);
+    filter: url(#blur-filter)}
+    25%{stroke: #e3f300;
+    filter: url(#blur-filter);}
+    50%{filter: url(#blur-filter);
+    stroke: #fdffdf;}
+    75%{filter: url(#blur-filter);
+    stroke: #e3f300;}
+    100%{filter: url(#blur-filter);
+    stroke: rgba(77, 202, 203, 1)}
 }
 
+@keyframes lighta {
+    0%{stroke: rgba(77, 202, 203, 1);}
+    25%{stroke: #e3f300;}
+    50%{stroke: #fdffdf;}
+    75%{stroke: #e3f300;}
+    100%{stroke: rgba(77, 202, 203, 1)}
+}
+
+@keyframes glowb {
+    0%{stroke: #F44336;
+    filter: url(#blur-filter)}
+    25%{stroke: #BA68C8;
+    filter: url(#blur-filter);}
+    50%{filter: url(#blur-filter);
+    stroke: rgba(77, 202, 203, 1);}
+    75%{filter: url(#blur-filter);
+    stroke: #BA68C8;}
+    100%{filter: url(#blur-filter);
+    stroke: #F44336}
+}
+
+@keyframes lightb {
+    0%{stroke: #F44336;}
+    25%{stroke: #BA68C8;}
+    50%{stroke: rgba(77, 202, 203, 1);}
+    75%{stroke: #BA68C8;}
+    100%{stroke: #F44336}
+}
+
+@keyframes glowc {
+    0%{stroke: #00FF33;
+    filter: url(#blur-filter)}
+    25%{stroke: rgba(77, 202, 203, 1);
+    filter: url(#blur-filter);}
+    50%{filter: url(#blur-filter);
+    stroke: #9C27B0;}
+    75%{filter: url(#blur-filter);
+    stroke: rgba(77, 202, 203, 1);}
+    100%{filter: url(#blur-filter);
+    stroke: #00FF33}
+}
+
+@keyframes lightc {
+    0%{stroke: #00FF33;}
+    25%{stroke: rgba(77, 202, 203, 1);}
+    50%{stroke: #9C27B0;}
+    75%{stroke: rgba(77, 202, 203, 1);}
+    100%{stroke: #00FF33}
+}
+
+
+#glow1 {
+  animation: glowa 2s ease infinite, move 4s infinite;
+}
 #tungsten1 {
-  animation: light 2s infinite;
+  animation: lighta 2s ease infinite, move 4s infinite;
+}
+
+#glow2 {
+  animation: glowb 4s ease infinite, move 3s infinite;
+}
+#tungsten2 {
+  animation: lightb 4s ease infinite, move 3s infinite;
+}
+#glow3 {
+  animation: glowc 6s ease infinite, move 5s infinite;
+}
+#tungsten3 {
+  animation: lightc 6s ease infinite, move 5s infinite;
 }

@@ -1,6 +1,7 @@
 // Index
   // 1: JS for landing page
   // 2: Navigation Bar Functions
+  // 3: Canvas operations for Triangle at bottom and next market date
 
 // 1:________________________________________
 class TextScramble {
@@ -83,3 +84,27 @@ function openNav() { //opens navigation bar
 function closeNav() { //closes nav bar
   document.getElementById("navigation").style.width = "0";
 }
+
+// 3:________________________________________
+var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.beginPath();
+  ctx.fillStyle = 'rgba(77, 202, 203, 1)';
+  ctx.shadowBlur = 20;
+  ctx.shadowColor = "rgba(77, 202, 203, 1)";
+  ctx.moveTo(0, canvas.width);
+  ctx.lineTo(canvas.width,2*canvas.height/3)
+  ctx.lineTo(canvas.width,canvas.height);
+  ctx.closePath();
+  ctx.fill();
+  ctx.lineWidth = 2.5;
+  ctx.strokeStyle = 'rgba(77, 202, 203, 1)';
+  ctx.stroke();
+}
+
+draw();
