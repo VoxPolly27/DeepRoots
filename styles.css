@@ -2,7 +2,7 @@
   1: Body, image, and text
   2: Navigation
   3: Bulbs
-
+  4: Logo animation
 
 
 /* #00f3e0 */
@@ -47,28 +47,29 @@ body {
 }
 
 #logo {
-  height: 300px;
+  height: 400px;
   width: 300px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding-bottom: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 
-.text{
+/* .text{
   position: absolute;
   font-weight:100;
   font-size:28px;
   color: rgb(239, 225, 201);
   /* color:#fafafa; */
-  top: 65%;
+  /* top: 65%;
   font-family: 'Sofia', cursive;
-}
+} */
 
-.dud{
+/* .dud{
   color:#757575;
-}
+} */
 
 /* 2:________________________________________  */
 
@@ -107,7 +108,7 @@ body {
 .sidenav a {
   padding: 15px 15px 32px 32px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   color: rgba(77, 202, 203, 0.5);
   display: block;
   transition: 0.3s;
@@ -123,6 +124,7 @@ body {
 
 .sidenav .closebtn {
   position: absolute;
+  color: rgb(239, 225, 201);
   top: 0;
   right: 25px;
   font-size: 36px;
@@ -180,11 +182,11 @@ body {
 }
 
 @keyframes pendulum {
-  0% {  transform: rotateY(5deg);}
-  25% { transform: rotateY(-5deg)}
+  0% {  transform: rotateY(7deg);}
+  25% { transform: rotateY(-7deg)}
   /* 50% { transform: rotateY(-5deg);} */
-  75% { transform: rotateY(5deg);}
-  100% { transform: rotateY(-5deg);}
+  75% { transform: rotateY(7deg);}
+  100% { transform: rotateY(-7deg);}
 }
 
 @keyframes glowa {
@@ -257,13 +259,12 @@ body {
 #tungsten1 {
   animation: lighta 2s ease infinite, move 4s infinite;
 }
-
 #glow2 {
   animation: glowb 4s ease infinite, pendulum 6s infinite;
   transition-timing-function: cubic-bezier(.75,.07,.23,.91);
 }
 #tungsten2 {
-  animation: lightb 4s ease infinite, pendulum 6s infinite;
+  animation: lightb 4s ease infinite, pendulum 6s infinite;;
   transition-timing-function: cubic-bezier(.75,.07,.23,.91);
 }
 #glow3 {
@@ -271,4 +272,66 @@ body {
 }
 #tungsten3 {
   animation: lightc 6s ease infinite, move 5s infinite;
+}
+
+/* 4:________________________________________  */
+
+#layer106 {
+  transform: translate(-220px,-280px);
+}
+
+@keyframes rotation {
+	from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+@keyframes brighten {
+  0% {fill:rgba(77, 202, 203, 1);}
+  50% {fill: white;}
+  100% {fill:rgba(77, 202, 203, 1);}
+}
+/* #bcebeb */
+
+#logo:hover > #layer104,#logo:hover > #layer106{
+
+  animation: brighten 4s ease-in-out;
+}
+
+#logo:hover > #layer101{
+  transform-origin: 1250px 1200px;
+  animation: rotation 4s;
+}
+
+/* 5:________________________________________  */
+
+#logo:hover + #text{
+  animation: animate 4s linear;
+}
+
+#text {
+  position: absolute;
+  top: 65%;
+  font-family: 'Sofia', cursive;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: -500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
 }
