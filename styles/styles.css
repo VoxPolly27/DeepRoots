@@ -1,0 +1,356 @@
+/* // Index
+  1: Body, image, and text
+  2: Navigation
+  3: Bulbs
+  4: Logo animation
+  5: Logo Text Animation
+
+
+/* #00f3e0 */
+/* rgba(77, 202, 203, 1) */
+/* Background = #161111 */
+/* References: */
+/* Image by Ranjith Siji from Pixabay  */
+/* <a href="https://icons8.com/icon/61246/small-business">Small Business icon by Icons8</a> */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Sofia');
+
+/* // 1:________________________________________ */
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #161111 ;
+  /* background-image: url("images/bulbs2.png"); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+}
+
+#canvas {
+  height: 100vh;
+  width: 100vw;
+}
+
+#nextMarket {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 2.5vw;
+  font-family: 'Sofia', cursive;
+  color: rgb(239, 225, 201);
+  /* color: #161111; */
+  font-weight:100;
+  z-index: 5;
+}
+
+#logo {
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+/* .text{
+  position: absolute;
+  font-weight:100;
+  font-size:28px;
+  color: rgb(239, 225, 201);
+  /* color:#fafafa; */
+  /* top: 65%;
+  font-family: 'Sofia', cursive;
+} */
+
+/* .dud{
+  color:#757575;
+} */
+
+/* 2:________________________________________  */
+
+.navbutton {
+  top: 45%;
+  left: 20px;
+  z-index: 1;
+  position: fixed;
+  color: rgb(77, 202, 203);
+}
+
+.option{
+  margin-left: 35%;
+  left: 20%;
+  height: 10vh;
+  border-radius: 50px;
+  color: #161111;
+  flex: 1;
+}
+
+.option img{
+  background-color: rgba(77, 202, 203, 1);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  position: relative;
+  top: 10%;
+}
+
+
+.sidenav {
+  height: 90vh;
+  width: 0;
+  position: fixed;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidenav a {
+  font-size: 4vh;
+  width: 100%;
+  transition: 0.3s;
+  font-family: 'Sofia', cursive;
+}
+
+.sidenav a:hover {
+  flex: 2;
+  color: rgb(239, 225, 201);
+  transition: 0.2s linear;
+  cursor:pointer;
+}
+
+.sidenav a:hover > img{
+  background-color: rgb(239, 225, 201);
+  transition: 0.2s linear;
+}
+
+.closebtn {
+  position: absolute;
+  color: rgba(77, 202, 203, 1);
+  left: 25px;
+  height: 10px;
+  width: 10px;
+  z-index: 5;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* 3:________________________________________  */
+
+#bulb {
+  position: fixed;
+  background-color: #161111;
+  z-index: -1;
+}
+
+.bulb1 path {
+  animation: move 4s infinite;
+}
+.bulb2 path {
+  animation: pendulum 6s infinite;
+  transition-timing-function: cubic-bezier(.75,.07,.23,.91);
+}
+.bulb3 path {
+  animation: move 5s infinite;
+}
+#line1 {
+  animation: move 4s infinite;
+}
+
+#line2 {
+  animation: pendulum 6s infinite;
+  transition-timing-function: cubic-bezier(.75,.07,.23,.91);
+}
+
+#line3 {
+  animation: move 5s infinite;
+}
+
+@keyframes move {
+  0% {  transform: translateY(-1px);}
+  10% { transform: translateY(-2px);}
+  20% { transform: translateY(-4px);}
+  30% { transform: translateY(-6px);}
+  40% { transform: translateY(-8px);}
+  50% { transform: translateY(-10px);}
+  60% { transform: translateY(-8px);}
+  70% { transform: translateY(-6px);}
+  80% { transform: translateY(-4px);}
+  90% { transform: translateY(-2px);}
+  100% {transform: translateY(-1px);}
+}
+
+@keyframes pendulum {
+  0% {  transform: rotateY(7deg);}
+  25% { transform: rotateY(-7deg)}
+  /* 50% { transform: rotateY(-5deg);} */
+  75% { transform: rotateY(7deg);}
+  100% { transform: rotateY(-7deg);}
+}
+
+@keyframes glowa {
+    0%{stroke: rgba(77, 202, 203, 1);
+    filter: url(#blur-filter)}
+    25%{stroke: #e3f300;
+    filter: url(#blur-filter);}
+    50%{filter: url(#blur-filter);
+    stroke: #fdffdf;}
+    75%{filter: url(#blur-filter);
+    stroke: #e3f300;}
+    100%{filter: url(#blur-filter);
+    stroke: rgba(77, 202, 203, 1)}
+}
+
+@keyframes lighta {
+    0%{stroke: rgba(77, 202, 203, 1);}
+    25%{stroke: #e3f300;}
+    50%{stroke: #fdffdf;}
+    75%{stroke: #e3f300;}
+    100%{stroke: rgba(77, 202, 203, 1)}
+}
+
+@keyframes glowb {
+    0%{stroke: #F44336;
+    filter: url(#blur-filter)}
+    25%{stroke: #BA68C8;
+    filter: url(#blur-filter);}
+    50%{filter: url(#blur-filter);
+    stroke: rgba(77, 202, 203, 1);}
+    75%{filter: url(#blur-filter);
+    stroke: #BA68C8;}
+    100%{filter: url(#blur-filter);
+    stroke: #F44336}
+}
+
+@keyframes lightb {
+    0%{stroke: #F44336;}
+    25%{stroke: #BA68C8;}
+    50%{stroke: rgba(77, 202, 203, 1);}
+    75%{stroke: #BA68C8;}
+    100%{stroke: #F44336}
+}
+
+@keyframes glowc {
+    0%{stroke: #00FF33;
+    filter: url(#blur-filter)}
+    25%{stroke: rgba(77, 202, 203, 1);
+    filter: url(#blur-filter);}
+    50%{filter: url(#blur-filter);
+    stroke: #9C27B0;}
+    75%{filter: url(#blur-filter);
+    stroke: rgba(77, 202, 203, 1);}
+    100%{filter: url(#blur-filter);
+    stroke: #00FF33}
+}
+
+@keyframes lightc {
+    0%{stroke: #00FF33;}
+    25%{stroke: rgba(77, 202, 203, 1);}
+    50%{stroke: #9C27B0;}
+    75%{stroke: rgba(77, 202, 203, 1);}
+    100%{stroke: #00FF33}
+}
+
+
+#glow1 {
+  animation: glowa 2s ease infinite, move 4s infinite;
+}
+#tungsten1 {
+  animation: lighta 2s ease infinite, move 4s infinite;
+}
+#glow2 {
+  animation: glowb 4s ease infinite, pendulum 6s infinite;
+  transition-timing-function: cubic-bezier(.75,.07,.23,.91);
+}
+#tungsten2 {
+  animation: lightb 4s ease infinite, pendulum 6s infinite;;
+  transition-timing-function: cubic-bezier(.75,.07,.23,.91);
+}
+#glow3 {
+  animation: glowc 6s ease infinite, move 5s infinite;
+}
+#tungsten3 {
+  animation: lightc 6s ease infinite, move 5s infinite;
+}
+
+/* 4:________________________________________  */
+
+#layer106 {
+  transform: translate(-220px,-280px);
+  z-index: -1;
+}
+
+@keyframes rotation {
+	from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+@keyframes brighten {
+  0% {fill:rgba(77, 202, 203, 1);}
+  50% {fill: white;}
+  100% {fill:rgba(77, 202, 203, 1);}
+}
+/* #bcebeb */
+
+#logo:hover > #layer104,#logo:hover > #layer106{
+
+  animation: brighten 4s ease-in-out;
+}
+
+#logo:hover > #layer101{
+  transform-origin: 1250px 1200px;
+  animation: rotation 4s;
+}
+
+#layer101 {
+  z-index: 1;
+}
+/* 5:________________________________________  */
+
+#logo:hover + #text{
+  animation: animate 4s linear;
+}
+
+#text {
+  position: absolute;
+  padding-top: 20px;
+  top: 65%;
+  font-family: 'Sofia', cursive;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: -500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

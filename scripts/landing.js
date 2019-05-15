@@ -79,7 +79,7 @@
 
 // 2:________________________________________
 function openNav() { //opens navigation bar
-  document.getElementById("navigation").style.width = "20%";
+  document.getElementById("navigation").style.width = "30%";
 }
 
 function closeNav() { //closes nav bar
